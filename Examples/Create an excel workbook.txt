@@ -1,0 +1,22 @@
+*** settings ***
+Library   ExcelLibrary
+
+*** Test Case ***
+An excel workbook can be created
+    Create Workbook   testme.xlsx
+    
+A created workbook can be saved  
+	Create Workbook   testme.xlsx 
+    Save Workbook
+    
+Active sheet name can be retrieved
+    Create Workbook   testme.xlsx
+    ${sheetname}=   Get Active Sheet Name
+    Should Be Equal As Strings   ${sheetname}   Sheet
+
+All sheet names can be retrieved
+    Create Workbook   testme.xlsx
+	${l}=   Get Sheet Names
+	Log Many   ${l}    
+
+    
