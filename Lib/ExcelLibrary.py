@@ -3,8 +3,6 @@
 '''
 
 from openpyxl import Workbook
-from symbol import try_stmt
-from compiler.pycodegen import TRY_FINALLY
 
 class ExcelLibrary(object):
     '''
@@ -56,3 +54,9 @@ class ExcelLibrary(object):
     def get_sheet_names(self):
         return self.active_workbook.get_sheet_names()
     
+    def select_sheet(self, sheet):
+        if isnumeric(sheet):
+            pass
+        else:
+            pass
+        
